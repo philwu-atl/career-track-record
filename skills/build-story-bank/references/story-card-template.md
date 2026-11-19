@@ -86,4 +86,5 @@ Count the filled fields out of twelve, using these rules:
   count the field as filled.
 
 A card with an empty Result or Evidence field is not ready to validate,
-whatever its count.
+whatever its count. It can still be approved, because approval means the
+content is accurate, not that it is proven.

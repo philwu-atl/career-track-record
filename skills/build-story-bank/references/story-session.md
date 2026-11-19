@@ -8,7 +8,9 @@ Aim for about 10 questions. Ask only about fields that are empty or partial,
 and never ask again about something the user has already confirmed. Combine
 questions where it is natural, such as tags with approval. Use a follow-up only
 when an answer is vague. If the user says they do not know, do not follow up:
-leave the field empty, note it as an open question, and move on.
+leave the field empty, note it as an open question, and move on. If the user
+answers part of a question and does not know the rest, that is final: do not
+ask for the rest again.
 
 ## 1. Show the draft (1 minute)
 
@@ -27,20 +29,26 @@ Ask one question for each field that is empty or partial, in this order.
 | Situation | What was the problem, and why did it matter then? | What would have happened if nothing was done? |
 | Actions | What did you personally do that made the difference? | What would not have happened if you had been absent? |
 | Obstacles | What was the hardest part, and what did you do about it? | Give one specific conversation or decision. |
-| Evidence | Who could back this up, and is there a document or number you could point to? | A former boss, a customer, a board deck? If they name a person: what can that person confirm, the result, your role, or both? |
+| Evidence | Who could back this up, and is there a document or number you could point to? For each person named, also ask what they can confirm (the result, your role, or both), unless the answer already says. | A former boss, a customer, a board deck? |
 | Lessons | What would you repeat, and what would you do differently? | How did you apply this later? |
 | Quotes (optional) | Is there a line someone said that you would repeat in an interview? | None. Skip if nothing comes to mind. |
 
-If the card contains figures, ask once whether they are public or cleared for
-use. If the user does not know, record "clearance unknown".
+Ask once per figure whether it is public or cleared for use. Record `cleared`,
+`not cleared` or `clearance unknown`. A figure that appears on several cards,
+such as a budget on the Role and scope line, is asked about once and the answer
+carried to the other cards.
 
 ## 3. Challenge (2 minutes)
 
-Ask two tough questions a senior interviewer would ask:
+Two tough questions a senior interviewer would ask are part of every session.
+They take priority over the rule against repeating questions.
 
-1. "What share of this was you versus the team?" Record the answer in
-   **Actions**, and reword the title and actions to match it.
-2. "What would a skeptic say about that number?" Record the answer in
+1. "What share of this was you versus the team?" Skip it only when the user
+   has already given that split in this session; then record it as answered.
+   Record the answer in **Actions**, and reword the title and actions to match
+   it.
+2. "What would a skeptic say about that number?" If the card has no number,
+   ask "What would a skeptic doubt about this story?" Record the answer in
    **Evidence**.
 
 If an answer weakens a claim, rewrite the claim to the weaker, accurate

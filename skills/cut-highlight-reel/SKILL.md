@@ -8,7 +8,7 @@ description: >
   Career Track Record workflow: select the right story cards for one purpose
   and build the materials from them.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Cut a highlight reel (Step 4)
@@ -24,9 +24,15 @@ reel, not from the whole bank.
   card. If the bank cannot support a claim, say so and leave the claim out.
 - **Flag weak cards.** If a reel uses an unvalidated or unapproved card, say so
   and ask whether to fix it first.
-- **Respect approved uses.** Use a card in a resume, an interview guide, a post
-  or a book only if that use is in its approved uses. If the list is empty, ask
-  the user before building.
+- **Respect approved uses.** Use a card only for a use in its approved uses.
+  Resume covers the resume and profile text. Interview covers the interview
+  guide and the 90-second introduction. Post and book cover those. If the list
+  is empty, ask the user before building.
+- **Handle figures by clearance.** A figure marked not cleared never appears
+  in an output: remove it, say so, and do not supply a substitute. A figure
+  with clearance unknown may appear in a draft only: list every such figure
+  under "Confirm before sending", and label the output a draft until the user
+  has confirmed each one. Cleared figures are used freely.
 - **Say whose account it is.** When a card is marked "role: own account", keep
   that note beside any line built from it.
 - **A reel points to cards. It never copies them.** A reel holds card ids and
@@ -54,6 +60,13 @@ weak card to reach a number.
 
 **When there is no Core Reel.** Build the Job Reel straight from the bank and
 say so.
+
+**One Core Reel per target.** Each confirmed target job type has its own Core
+Reel. Build one at a time.
+
+**Keep reels current.** A Job Reel may use any approved card that fits the
+posting, including one built during the gap check. Add that card to the
+matching Core Reel as well, and say so.
 
 ## Reel format
 
@@ -86,7 +99,9 @@ unapproved reel only if the user asks, and label the output as a draft.
 - A list of resume changes: what to move up, cut or reword, each tied to a
   card. Work against the master resume if there is one, otherwise against the
   resume the user supplied. Cover the posting's key terms only where a card
-  supports them.
+  supports them. Correct any resume line that a card shows to be inaccurate,
+  even if that card is not in the reel, and mark it as an accuracy correction.
+  List resume lines that no card supports under "Not checked".
 - An interview guide: likely questions, each reel story in a two-minute and a
   thirty-second version, and answers to the two tough questions from the story
   session.

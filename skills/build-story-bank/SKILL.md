@@ -8,7 +8,7 @@ description: >
   documents, draft story cards, and fill the gaps in each card through a short
   guided session.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Build the Story Bank (Step 1)
@@ -28,11 +28,13 @@ Apply these in every step of the workflow.
    team did. Prefer "led", "helped build" or "contributed to" over "built" when
    that is the accurate word.
 3. **Require proof before validation.** See the validation rule below.
-4. **Protect confidential information.** Before recording employer or client
-   figures, ask once per card whether they are public or cleared for use. If
-   the user does not know, record "clearance unknown" and remind them to check
-   before the figure is used outside the bank. Keep the bank in the user's own
-   workspace. Do not send its contents anywhere.
+4. **Protect confidential information.** Ask once per figure whether it is
+   public or cleared for use, and carry the answer to every card that uses the
+   figure. Record one of `cleared`, `not cleared` or `clearance unknown`. A
+   figure that is not cleared never appears in anything meant to leave the
+   bank. A figure with clearance unknown may appear only in a draft, listed
+   under "Confirm before sending". Keep the bank in the user's own workspace.
+   Do not send its contents anywhere.
 5. **When the user does not know, or does not decide, do not guess.** Leave the
    field, rating or decision as it is, record it as an open question, say what
    it blocks, and move on. Do not ask a follow-up to an "I don't know".

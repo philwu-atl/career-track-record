@@ -7,7 +7,7 @@ description: >
   workflow: link every story card to skills, job types and proof, then use the
   map to choose target job types.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Build the Story Map (Step 2)
@@ -54,8 +54,10 @@ Check each tag against its card. A card counts toward a skill only when its
 Actions or Result show that skill.
 
 Scope is not a tag. Add one row to the map named **Scope**, built from the Role
-and scope lines the user has confirmed (team size, sites, budget). Its support
-level depends on proof that covers scope, not on proof of a card's result.
+and scope lines the user has confirmed. List each part of scope (team size,
+sites, budget) with its source. Label the row **proven** when every part has a
+source, **partly proven** when some do, and **own account** when none do. The
+three support levels below do not apply to this row.
 
 ### 3. Write the map
 
@@ -95,15 +97,19 @@ skill instead.
 ### 5. Hand off to the Core Reel
 
 A Core Reel is the eight to ten strongest approved cards for one job type.
-Once the user has confirmed a target, offer to build its Core Reel with the
-`cut-highlight-reel` skill. Building the reel is part of that skill, not this
-one.
+Each confirmed target gets its own Core Reel. Build them one at a time with the
+`cut-highlight-reel` skill: start with the target the user names, or, if they
+have no preference, the one with the best support, then offer the next.
+Building the reel is part of that skill, not this one.
 
 ## Keeping the map current
 
 Rebuild the affected rows whenever a card is added, changed, approved or
 validated. The map is derived from the cards. When the two disagree, the cards
 win.
+
+When a card is approved after a Core Reel exists, add it to every Core Reel
+whose job type it is tagged with, re-order that reel, and tell the user.
 
 ## When finished
 

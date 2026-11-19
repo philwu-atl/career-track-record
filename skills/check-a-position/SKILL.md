@@ -8,7 +8,7 @@ description: >
   gaps on the Story Map, close them by capturing stories or planning training,
   and support the decision.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Check a position (Step 3)
@@ -51,7 +51,8 @@ For each requirement, name the cards that prove it. Rate each requirement:
 - **Strong:** at least one approved, validated card proves it directly.
   Directly means the card's own actions or result are what the requirement asks
   for. If it takes interpretation, such as counting a driver training program
-  as a safety program, rate it Partial and ask the user whether the link holds.
+  as a safety program, rate it Partial. The gap check asks the user whether
+  the link holds.
 - **Partial:** related evidence, or evidence that is unvalidated, unapproved or
   unconfirmed.
 - **Gap:** no card. A starter is not evidence: rate the requirement Gap and
@@ -79,28 +80,40 @@ beside this result and note any disagreement.
 
 ### 3.3 Gap check
 
-For each requirement rated Gap or Partial, ask one question at a time: "Have
-you done this, and it is just not in the bank yet?" Skip a requirement that a
-card built earlier in this gap check has already resolved. There are three
-answers.
+Go through each requirement rated Gap or Partial, one question at a time. Skip
+a requirement that a card built earlier in this gap check has already
+resolved. Choose the question by why the rating fell short:
+
+- **A loose match.** Ask whether the link holds, for example "Does leading the
+  rollout of a driver training program count as running a safety program?" If
+  the user says yes, re-score. If no or not sure, leave it Partial and record
+  an open question.
+- **Proof or confirmation missing.** Ask the Evidence question alone. Do not
+  run a full session.
+- **No card.** Ask "Have you done this, and it is just not in the bank yet?"
+  There are three answers, set out below.
 
 ### 3.4a Yes: clarify a skill the user has
 
 Run a story session for that story (see the `build-story-bank` skill). Ask for
 approval and apply the validation rule: proof is a document, a public source
 found by search and confirmed by the user, or a named person who can back it
-up. Store the card, update the Story Map, and re-score the requirement.
+up. Store the card, update the Story Map, add the card to any Core Reel whose
+job type it is tagged with, and re-score the requirement.
 
-If the story is already in the bank and only its proof is missing, ask the
-Evidence question alone. Do not run a full session.
+If the answer is a fact about the user's background and not a story, such as
+the industry they worked in, record it on the Role and scope line of the cards
+it applies to, marked as the user's own account, and ask once what could back
+it up.
 
 ### 3.4b No: identify a new skill
 
-List the gap as a training item: a course or a project, with an estimate of
-the time. If web search is available, use it to name a real resource and say
+List the gap as a training item: a course or a project. If web search is
+available, use it to name a real resource and say
 where it came from. If not, describe the kind of training and let the user
 choose one. Do not present a resource as vetted. If the source does not state
-how long it takes, write "duration not stated". Do not estimate it.
+how long it takes, or there is no source, write "duration not stated". Do not
+estimate it.
 
 If the user chooses to upgrade skills, write the items into a development plan,
 most important first. When an item is completed, record it as a new story card

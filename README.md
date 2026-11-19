@@ -64,19 +64,28 @@ Start a conversation and say what you want in plain words:
 
 ## Your data
 
-Your story bank is a folder of plain text files in your own workspace:
+- **The plugin has no server and collects nothing.** It is a set of
+  instructions for Claude. Nothing you enter is sent to the author or to any
+  third party by this plugin.
+- **Your story bank stays with you.** It is saved as plain text files in the
+  folder you work in with Claude:
 
-```
-story-bank/
-├── cards/         one file per story card
-├── story-map.md
-├── positions/     one file per position checked
-└── reels/         highlight reels
-```
+  ```
+  story-bank/
+  ├── cards/         one file per story card
+  ├── story-map.md
+  ├── positions/     one file per position checked
+  └── reels/         highlight reels
+  ```
 
-Nothing is sent anywhere by this plugin. Career stories often contain employer
-or client figures. Check what is public or cleared before you record or share
-them.
+  If you use Claude without a working folder, your stories stay in your
+  conversation and you save them yourself.
+- **Claude still processes what you share.** As with anything you do in
+  Claude, your documents and answers are handled under your own Claude plan
+  and privacy settings. This plugin does not change that.
+- **Confidential figures are tracked.** Career stories often contain employer
+  or client figures. The plugin asks whether each figure is cleared for use. A
+  figure marked not cleared is kept out of every resume, guide and post.
 
 ## Using AI in job applications
 

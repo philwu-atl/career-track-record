@@ -1,17 +1,14 @@
 ---
 name: check-a-position
-description: >
-  This skill should be used when the user shares a job posting and asks "is
-  this a fit", "check this job", "should I apply", "run the fit check", "run
-  the gap check", or "what am I missing for this role". It is Step 3 of the
-  Career Track Record workflow: score the fit against the Story Bank, find the
-  gaps on the Story Map, close them by capturing stories or planning training,
-  and support the decision.
+description: "This skill should be used when the user shares a job posting and asks \"is this a fit\", \"check this job\", \"should I apply\", \"run the fit check\", \"run the gap check\", or \"what am I missing for this role\". It is Step 3 of the Career Track Record workflow: score the fit against the Story Bank, find the gaps on the Story Map, close them by capturing stories or planning training, and support the decision.\n"
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Check a position (Step 3)
+
+Part of Career Track Record v0.1.4. If the user asks which version is in use,
+say v0.1.4.
 
 Step 3 is a feedback loop between the Story Bank and the Story Map. It runs
 each time the user considers a position, and answers three questions: how well
@@ -30,7 +27,7 @@ directly and say the map is missing.
 - **Never invent experience.** A requirement with no card behind it is a gap,
   even if the user's background makes it seem likely.
 - **Flag weak evidence.** When a strength rests on an unvalidated or
-  unapproved card, say so.
+  unapproved card, or a card below Interview-ready, say so.
 - **When the user does not know, or does not decide, do not guess.** Record it
   as an open question, say what it blocks, and move on.
 - **No working folder?** Keep the position record in the conversation and give
@@ -48,13 +45,14 @@ and role.
 
 For each requirement, name the cards that prove it. Rate each requirement:
 
-- **Strong:** at least one approved, validated card proves it directly.
+- **Strong:** at least one approved, validated card proves it directly, and
+  that card is Interview-ready or Proven.
   Directly means the card's own actions or result are what the requirement asks
   for. If it takes interpretation, such as counting a driver training program
   as a safety program, rate it Partial. The gap check asks the user whether
   the link holds.
-- **Partial:** related evidence, or evidence that is unvalidated, unapproved or
-  unconfirmed.
+- **Partial:** related evidence, or evidence that is unvalidated, unapproved,
+  unconfirmed, or on a card below Interview-ready (score under 70).
 - **Gap:** no card. A starter is not evidence: rate the requirement Gap and
   note that a starter exists.
 
@@ -65,8 +63,8 @@ Partial.
 
 Report:
 
-1. A table: requirement, must-have or preferred, rating, cards behind it,
-   one-line reason.
+1. A table: requirement, must-have or preferred, rating, cards behind it with
+   their scores, one-line reason.
 2. An overall read in one sentence, counting must-haves separately from
    preferred items ("3 of 4 must-haves strong, 1 gap").
 3. Three to five strengths, each with the card that backs it.
@@ -90,12 +88,19 @@ resolved. Choose the question by why the rating fell short:
   an open question.
 - **Proof or confirmation missing.** Ask the Evidence question alone. Do not
   run a full session.
+- **Card too thin.** The right card exists but is below Interview-ready. Say
+  what this job needs from it (for example, a commercial role needs the user's
+  own revenue figure), then offer a strengthen session on that card: only its
+  `strengthen_next` items that bear on the requirement. The user can accept,
+  or leave it Partial and come back later. Re-score the card and the
+  requirement afterwards.
 - **No card.** Ask "Have you done this, and it is just not in the bank yet?"
   There are three answers, set out below.
 
 ### 3.4a Yes: clarify a skill the user has
 
-Run a story session for that story (see the `build-story-bank` skill). Ask for
+Run a story session for that story at Standard depth, or Deep if an
+interview is booked (see the `build-story-bank` skill). Ask for
 approval and apply the validation rule: proof is a document, a public source
 found by search and confirmed by the user, or a named person who can back it
 up. Store the card, update the Story Map, add the card to any Core Reel whose
@@ -147,5 +152,6 @@ decision is made.
 
 ## When finished
 
-State the decision, what was added to the bank, the open questions, and the
-next action.
+State the decision, what was added to the bank, any card left below
+Interview-ready that backs a must-have (with its `strengthen_next` items), the
+open questions, and the next action.

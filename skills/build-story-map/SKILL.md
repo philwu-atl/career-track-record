@@ -1,16 +1,14 @@
 ---
 name: build-story-map
-description: >
-  This skill should be used when the user asks to "build my story map", "map my
-  stories to skills", "what jobs do my stories support", "which roles should I
-  target", or "build my Core Reel". It is Step 2 of the Career Track Record
-  workflow: link every story card to skills, job types and proof, then use the
-  map to choose target job types.
+description: "This skill should be used when the user asks to \"build my story map\", \"map my stories to skills\", \"what jobs do my stories support\", \"which roles should I target\", or \"build my Core Reel\". It is Step 2 of the Career Track Record workflow: link every story card to skills, job types and proof, then use the map to choose target job types.\n"
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Build the Story Map (Step 2)
+
+Part of Career Track Record v0.1.4. If the user asks which version is in use,
+say v0.1.4.
 
 The Story Map is the web of links between story cards and the skills they
 prove, the job types they fit, the proof behind them and the people who can
@@ -40,8 +38,8 @@ are drafts, ask whether to use them, and flag each one.
 ### 1. Read every card
 
 Read the approved cards in `story-bank/cards/`, plus any drafts the user agreed
-to include. Collect each card's skill tags, job-type tags, evidence, status and
-proof. Starters are not cards and do not go on the map, but list them under
+to include. Collect each card's skill tags, job-type tags, evidence, status,
+proof (result and role), score and band. Starters are not cards and do not go on the map, but list them under
 open questions.
 
 ### 2. Tidy the tags
@@ -63,8 +61,9 @@ three support levels below do not apply to this row.
 
 Write `story-bank/story-map.md` with four sections:
 
-1. **Skills.** A table with one row per skill: the cards that show it, how many
-   of those are validated, what the proof covers, and a support level.
+1. **Skills.** A table with one row per skill: the cards that show it, with
+   each card's band, how many of those are validated, what the proof covers,
+   and a support level.
    - **Well supported:** two or more validated cards.
    - **Supported:** one validated card.
    - **Thin:** unvalidated cards only.
@@ -73,19 +72,22 @@ Write `story-bank/story-map.md` with four sections:
    that shows that skill.
 
    These levels describe how much evidence the bank holds. They are different
-   from the Strong, Partial and Gap ratings used when checking one position.
+   from the Strong, Partial and Gap ratings used when checking one position,
+   and from a card's band, which describes one card.
 2. **Job types.** For each job type, the cards that support it and the skills
    those cards cover.
 3. **People and proof.** Each named person or document, the cards it backs, and
    what it proves.
-4. **Open questions.** Cards missing proof or approval, unconfirmed scope,
-   figures with clearance unknown, starters not yet built out, and skills the
-   user mentioned that no card supports.
+4. **Open questions.** Cards missing proof or approval, cards still in the
+   Starter band, unconfirmed scope, figures with clearance unknown, starters
+   not yet built out, and skills the user mentioned that no card supports.
 
 ### 4. Choose target job types
 
 From the map, name up to three job types with the best support. For each, state
-the skills that carry it and the one that is weakest. Ask the user to confirm
+the skills that carry it and the one that is weakest. Where the weakest skill
+rests on a card below Interview-ready, name that card and its top
+`strengthen_next` item. Ask the user to confirm
 or change the targets. If the user does not confirm, keep the targets marked
 provisional and stop before the Core Reel.
 
@@ -96,7 +98,8 @@ skill instead.
 
 ### 5. Hand off to the Core Reel
 
-A Core Reel is the eight to ten strongest approved cards for one job type.
+A Core Reel is the eight to ten strongest approved cards for one job type,
+ranked by band and score, then by relevance.
 Each confirmed target gets its own Core Reel. Build them one at a time with the
 `cut-highlight-reel` skill: start with the target the user names, or, if they
 have no preference, the one with the best support, then offer the next.

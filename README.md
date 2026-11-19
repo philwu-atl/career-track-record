@@ -22,7 +22,7 @@ head. This workflow gets it out, checks it, and keeps it in one place.
 
 | Step | Skill | What it does | What you get |
 |---|---|---|---|
-| 1 | `build-story-bank` | Loads your resumes, bios and other documents, drafts story cards, and fills the gaps in a 15-minute guided session per story | A bank of story cards, each with proof |
+| 1 | `build-story-bank` | Loads your resumes, bios and other documents, drafts story cards, and fills the gaps in a short guided session per story (5 to 15 minutes, depending on depth) | A bank of story cards, each with proof and a strength score |
 | 2 | `build-story-map` | Links every story to the skills it proves, the job types it fits and the proof behind it | A story map (an ontology), target job types, a Core Reel |
 | 3 | `check-a-position` | Scores a posting against your bank, finds the gaps, and closes them by capturing a story you already have or planning training | A fit check, new or updated stories, a decision |
 | 4 | `cut-highlight-reel` | Picks the 5 to 7 stories for one job and builds from them | Resume changes, an interview guide, a debrief |
@@ -42,6 +42,25 @@ time.
 
 In practice this tends to make a resume more accurate, not more inflated:
 "built" becomes "helped build" when that is what happened.
+
+## Depth and score
+
+Not every story needs the same work. A story you might mention while
+networking needs less than one you will tell in a final-round interview.
+
+- **Depth.** Each story gets a session sized to its use: Quick (up to 4
+  questions), Standard (up to 7) or Deep (up to 10). Claude suggests a depth
+  from where you are in your search, and you can change it. Claude asks the
+  questions that matter most first and stops when the story is strong enough
+  for its use. Depth changes how much is asked, never the accuracy rules.
+- **Score.** Each story gets a strength score from 0 to 100 and a band:
+  Starter, Resume-ready, Interview-ready or Proven. Every story also lists the
+  two or three things that would raise its score most, with the points each
+  is worth. Come back in any session, say "strengthen card 08", and Claude asks
+  only those.
+
+When you check a job, any story that backs a key requirement but scores below
+Interview-ready is flagged, with an offer to strengthen it.
 
 ## Install
 
@@ -72,6 +91,7 @@ Start a conversation and say what you want in plain words:
 
   ```
   story-bank/
+  ├── settings.md    your target job types and default depth
   ├── cards/         one file per story card
   ├── story-map.md
   ├── positions/     one file per position checked
@@ -95,9 +115,9 @@ and AI helps you find, check and sharpen them.
 
 ## Status
 
-Version 0.1.3. The author built this and uses it for his own job search. It has
-been through three simulated test runs and has not yet been tested by many
-people. Feedback and corrections are welcome
+Version 0.1.4. The author built this and uses it for his own job search. It has
+been through three simulated test runs and one run on a real career, and has
+not yet been tested by many people. Feedback and corrections are welcome
 through Issues.
 
 ## License

@@ -1,17 +1,14 @@
 ---
 name: cut-highlight-reel
-description: >
-  This skill should be used when the user asks to "cut a highlight reel",
-  "build my Core Reel", "build a Job Reel", "tailor my resume to this job",
-  "prepare me for this interview", "write an interview guide", "debrief my
-  interview", or "pick stories for my book or posts". It is Step 4 of the
-  Career Track Record workflow: select the right story cards for one purpose
-  and build the materials from them.
+description: "This skill should be used when the user asks to \"cut a highlight reel\", \"build my Core Reel\", \"build a Job Reel\", \"tailor my resume to this job\", \"prepare me for this interview\", \"write an interview guide\", \"debrief my interview\", or \"pick stories for my book or posts\". It is Step 4 of the Career Track Record workflow: select the right story cards for one purpose and build the materials from them.\n"
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Cut a highlight reel (Step 4)
+
+Part of Career Track Record v0.1.4. If the user asks which version is in use,
+say v0.1.4.
 
 A highlight reel is a hand-picked set of story cards for one audience. Think of
 the Story Bank as all the game film from a career and a reel as the best plays
@@ -23,7 +20,11 @@ reel, not from the whole bank.
 - **Never invent experience.** Every line in every output must trace to a story
   card. If the bank cannot support a claim, say so and leave the claim out.
 - **Flag weak cards.** If a reel uses an unvalidated or unapproved card, say so
-  and ask whether to fix it first.
+  and ask whether to fix it first. Each use has a band it should meet: resume
+  lines need Resume-ready, an interview guide needs Interview-ready, book
+  chapters and public posts need Proven. A card below that band may still be
+  used if the user agrees; flag it with its score and its `strengthen_next`
+  items, and offer a strengthen session.
 - **Respect approved uses.** Use a card only for a use in its approved uses.
   Resume covers the resume and profile text. Interview covers the interview
   guide and the 90-second introduction. Post and book cover those. If the list
@@ -50,7 +51,7 @@ reel, not from the whole bank.
 
 | Reel | When | What is in it | Used for |
 |---|---|---|---|
-| Core Reel | Step 2, once per confirmed target job type | The 8 to 10 strongest approved cards for that job type, strongest first | Master resume, profile text, a 90-second introduction |
+| Core Reel | Step 2, once per confirmed target job type | The 8 to 10 strongest approved cards for that job type, highest band and score first | Master resume, profile text, a 90-second introduction |
 | Job Reel | Step 3, when the user decides to apply | 5 to 7 cards chosen from the Core Reel and re-ordered to match the posting | Tailored resume, opening lines for contacts, interview guide |
 | Public Reel | Any time, optional | Cards with the Narrative field filled in, grouped by theme | Book chapters, posts |
 
@@ -77,9 +78,9 @@ Reels for the company and role.
 # Job Reel: <company>, <role>
 Built from: Core Reel <job type>. Date: <date>.
 
-| Order | Card | Why this card for this audience |
-|---|---|---|
-| 1 | 04 <story title> | Proves the must-have on <requirement> |
+| Order | Card | Score and band | Why this card for this audience |
+|---|---|---|---|
+| 1 | 04 <story title> | 78, Interview-ready | Proves the must-have on <requirement> |
 ```
 
 Show the reel to the user and get approval before building anything from it.
@@ -117,7 +118,9 @@ unapproved reel only if the user asks, and label the output as a draft.
 
 Run a 10-minute debrief: which questions were asked, which stories landed,
 which did not, and what new facts the user recalled. Write anything new back to
-the story cards, not to the reel. Log the outcome in the position record.
+the story cards, not to the reel, and re-score each card that changed. If an
+interviewer pressed on a weak spot, add it to that card's `strengthen_next`.
+Log the outcome in the position record.
 
 ## When finished
 

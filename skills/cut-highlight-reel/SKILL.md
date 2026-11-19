@@ -5,10 +5,10 @@ description: >
   "build my Core Reel", "build a Job Reel", "tailor my resume to this job",
   "prepare me for this interview", "write an interview guide", "debrief my
   interview", or "pick stories for my book or posts". It is Step 4 of the
-  Career Track Record workflow: select the right story cards for one purpose and
-  build the materials from them.
+  Career Track Record workflow: select the right story cards for one purpose
+  and build the materials from them.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
 ---
 
 # Cut a highlight reel (Step 4)
@@ -22,24 +22,40 @@ reel, not from the whole bank.
 
 - **Never invent experience.** Every line in every output must trace to a story
   card. If the bank cannot support a claim, say so and leave the claim out.
-- **Flag unvalidated cards.** If a reel uses one, say so and ask whether to
-  validate it first.
-- **A reel points to cards. It never copies them.** A reel file holds card ids
-  and reasons. Fix a story once in the bank and every reel is current.
+- **Flag weak cards.** If a reel uses an unvalidated or unapproved card, say so
+  and ask whether to fix it first.
+- **Respect approved uses.** Use a card in a resume, an interview guide, a post
+  or a book only if that use is in its approved uses. If the list is empty, ask
+  the user before building.
+- **Say whose account it is.** When a card is marked "role: own account", keep
+  that note beside any line built from it.
+- **A reel points to cards. It never copies them.** A reel holds card ids and
+  reasons. Fix a story once in the bank and every reel is current.
 - **The user writes their own answers.** For free-text application questions
   and cover notes, ask for the user's own first draft and refine it. Do not
   write these from scratch. Remind the user to check the employer's policy on
   using AI in applications.
+- **When the user does not know, or does not decide, do not guess.** Record it
+  as an open question, say what it blocks, and move on.
+- **No working folder?** Keep the reel in the conversation and give the user
+  the text to save.
 
 ## The three kinds of reel
 
 | Reel | When | What is in it | Used for |
 |---|---|---|---|
-| Core Reel | Step 2, once per target job type | The 8 to 10 strongest approved cards for that job type, strongest first | Master resume, profile text, a 90-second introduction |
+| Core Reel | Step 2, once per confirmed target job type | The 8 to 10 strongest approved cards for that job type, strongest first | Master resume, profile text, a 90-second introduction |
 | Job Reel | Step 3, when the user decides to apply | 5 to 7 cards chosen from the Core Reel and re-ordered to match the posting | Tailored resume, opening lines for contacts, interview guide |
 | Public Reel | Any time, optional | Cards with the Narrative field filled in, grouped by theme | Book chapters, posts |
 
-## Reel file format
+**When the bank is small.** The counts are targets, not minimums. Use the cards
+that qualify, even if that is three, and say the reel is short. Never add a
+weak card to reach a number.
+
+**When there is no Core Reel.** Build the Job Reel straight from the bank and
+say so.
+
+## Reel format
 
 Save reels in `story-bank/reels/`. Name Core Reels for the job type and Job
 Reels for the company and role.
@@ -54,6 +70,8 @@ Built from: Core Reel <job type>. Date: <date>.
 ```
 
 Show the reel to the user and get approval before building anything from it.
+If the user does not approve, stop and ask what to change. Build from an
+unapproved reel only if the user asks, and label the output as a draft.
 
 ## What to build from a reel
 
@@ -65,9 +83,10 @@ Show the reel to the user and get approval before building anything from it.
 
 **From a Job Reel**
 
-- A list of resume changes against the master resume: what to move up, cut or
-  reword, each tied to a card. Check that the posting's key terms are covered
-  only where a card supports them.
+- A list of resume changes: what to move up, cut or reword, each tied to a
+  card. Work against the master resume if there is one, otherwise against the
+  resume the user supplied. Cover the posting's key terms only where a card
+  supports them.
 - An interview guide: likely questions, each reel story in a two-minute and a
   thirty-second version, and answers to the two tough questions from the story
   session.
@@ -83,9 +102,9 @@ Show the reel to the user and get approval before building anything from it.
 
 Run a 10-minute debrief: which questions were asked, which stories landed,
 which did not, and what new facts the user recalled. Write anything new back to
-the story cards, not to the reel. Log the outcome in the position file.
+the story cards, not to the reel. Log the outcome in the position record.
 
 ## When finished
 
-List what was built, which cards it used, and any claim left out for lack of
-proof.
+List what was built, which cards it used, any claim left out for lack of proof,
+and the open questions.

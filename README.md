@@ -86,8 +86,9 @@ and AI helps you find, check and sharpen them.
 
 ## Status
 
-Version 0.1.0. The author built this and uses it for his own job search. It has
-not yet been tested by many people. Feedback and corrections are welcome
+Version 0.1.2. The author built this and uses it for his own job search. It has
+been through two simulated test runs and has not yet been tested by many
+people. Feedback and corrections are welcome
 through Issues.
 
 ## License

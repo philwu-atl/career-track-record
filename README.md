@@ -191,7 +191,7 @@ it.
 
 ## Status and feedback
 
-Version 0.1.6. The author built this and uses it for his own job search. Each
+Version 0.1.6. The author built this and uses it for his own book, speaker bios and resume. Each
 of the four steps has been through simulated test runs with invented
 candidates, and Step 1 has had one run on a real career. It has not yet been
 tested by many people, and the screen features (tappable choices, the card

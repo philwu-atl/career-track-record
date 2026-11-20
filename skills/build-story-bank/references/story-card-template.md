@@ -11,8 +11,10 @@ id: 08
 title: <one line, result first>
 status: starter | draft | approved
 proof: validated | unvalidated
-result_proof: <source and what it covers> | none
-role_proof: <named person or document> | own account | none
+result_proof: <label, source and what it covers> | none
+role_proof: <label and source> | own account | none
+clearance: all cleared | some not cleared | unknown
+pending_changes: none
 depth: quick | standard | deep
 score: <0 to 100>
 band: starter | resume-ready | interview-ready | proven
@@ -43,11 +45,12 @@ The measured outcome, with the baseline and the time period.
 
 ## Evidence
 Where the proof comes from: a document, a public source found by search, or a
-named person who can back it up. Say what each source covers (the result, the
-user's role, the scope). For a named person, say what they can confirm. If the
-user's role rests on their own account, write "role: own account". Note whether
-figures are public, cleared, or "clearance unknown". Record the answer to the
-skeptic question here.
+named person who can back it up. Use the proof labels in the shared rules. Say
+what each source covers (the result, the user's role, the scope). For a named
+person, say what they can confirm and whether they are "not contacted" or have
+"agreed to confirm". If the user's role rests on their own account, write
+"role: own account". Mark any figure that is not cleared. Record the answer to
+the skeptic question here.
 
 ## Lessons
 What the user would repeat or change.
@@ -62,6 +65,53 @@ confirms it is something they would say, and is marked
 A longer telling, for a book chapter or a post.
 ```
 
+## Card view
+
+The template above is how a card is stored. The card view is how a card is
+shown to the user. It has two parts.
+
+**Card header**
+
+- Card id and title.
+- Role, organization and dates on one line.
+- Status and proof as short labels: `Draft` or `Approved`; `Result proof:
+  <label>` or `No result proof`; `Role proof: <label>` or `Role: own account`.
+  The labels are the ones in the shared rules, for example `document` or
+  `named person, not contacted`.
+- Score out of 100, band, and the depth's target score.
+- Up to three strengthen-next items with their points.
+
+**Card content**
+
+Situation, Actions, Obstacles, Result, Evidence and Lessons, each in one or
+two lines, in the user's own facts. Mark an empty field `(empty)` and a
+partial one `(partial: <what is missing>)`. Leave out the header block, the
+tag lists and the Narrative.
+
+When the session can draw a visual, draw the card view as one card: the header
+at the top, a bar showing the score with a mark at the target, the
+strengthen-next items as a row, and the content fields below. Otherwise use
+this text form:
+
+```
+Card <id> · <title>
+<role>, <organization>, <dates>
+<status> · <result proof label> · <role proof label>
+Score <n> of 100 · <band> · target <n> (<depth>)
+Strengthen next: <item (+points)> · <item (+points)> · <item (+points)>
+
+Situation: <one or two lines>
+Actions: <one or two lines>
+Obstacles: <one or two lines>
+Result: <one or two lines>
+Evidence: <one or two lines>
+Lessons: <one or two lines>
+```
+
+The card view never adds, rounds or rewords a fact. It shows what the stored
+card holds, in less space. A figure marked not cleared may appear in the card
+view, because the card view is shown only to the user.
+
 ## Card ids and related cards
 
 - **Ids.** A card keeps the number its story starter had. Starter 8 becomes
@@ -70,6 +120,20 @@ A longer telling, for a book chapter or a post.
   list each in the other's `related_cards` with a few words on the link (for
   example `09 (same partner, later order)`). Do not merge them unless the user
   asks. Count a shared result on one card only; the other card points to it.
+
+## Titles and file names
+
+A title is one line with the result first. When the you-versus-team answer
+changes the user's part, change the verb and keep the result first: "Cut
+claims 38% by designing the checks the team ran", not "Led the work that cut
+claims 38%". A card file keeps its name when its title changes.
+
+## The header lines `clearance` and `pending_changes`
+
+- `clearance` covers every employer or client figure on the card. It starts
+  as `unknown`. See "Confidential figures" in the shared rules.
+- `pending_changes` lists the fields changed since the user last approved the
+  card, for example `[Result, Evidence]`. Set it back to `none` at approval.
 
 ## The twelve fields
 
@@ -148,7 +212,7 @@ a named person whose coverage has not been asked.
 | Starter | 0 to 39 | | Stays in the bank |
 | Resume-ready | 40 to 69 | | Resume lines and fit checks, flagged |
 | Interview-ready | 70 to 84 | Result filled and the skeptic answered | Interview guides and Job Reels |
-| Proven | 85 to 100 | Full result proof and role proof that is not own account | Book chapters, public posts, the top of a Core Reel |
+| Proven | 85 to 100 | Full result proof and role proof, neither resting on own account or on a named person who has not been contacted | Book chapters, public posts, the top of a Core Reel |
 
 If a card reaches a band's score without the band's requirements, it stays in
 the band below and the missing requirement goes first in `strengthen_next`.
@@ -162,3 +226,10 @@ List up to three items that would add the most points, highest first, each
 with its points, for example `own outcome figure (+10)`. Put any missing band
 requirement first. Recompute the score, band and list whenever the card
 changes.
+
+The points shown must be the points the user will get. If answering an item
+is likely to add a figure that nothing on file covers, the new figure will
+make result proof partial and take points back. List the proof as its own
+item, for example `result baseline and period (+10)` and `proof for the new
+figure (+8)`. A card held below Proven only because a named person has not
+been contacted lists `<name> agrees to confirm (reaches Proven)`.

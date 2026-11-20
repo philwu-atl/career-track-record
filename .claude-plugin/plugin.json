@@ -2,7 +2,7 @@
 {
   "name": "career-track-record",
   "displayName": "Career Track Record",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "A four-step Claude plugin that captures and sharpens your career stories, then validates each one against a document, a public source, or a named person, so you can prepare for job opportunities, write a book or bio, and tell your story.",
   "author": {
     "name": "Phil Wu"
